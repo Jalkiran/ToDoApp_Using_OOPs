@@ -1,7 +1,7 @@
 from lists import ToDoList
 tdl=ToDoList()
 while True:
-    print('---Menu---')
+    print('\n---Menu---')
     print('1.Add Task')
     print('2.View Tasks')
     print('3.Mark Status')
