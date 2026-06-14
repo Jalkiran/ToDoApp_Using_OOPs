@@ -14,4 +14,14 @@ class ToDoList:
         else:
             for i,t in enumerate(self.tasks,1):
                 print(f'{i}.{t.title}')
-            
+    def status(self):
+        found=False
+        title=input('Enter task:')
+        for t in self.tasks:
+            if t.title==title:
+                t.completed_status=True
+                print('Task marked as completed!')
+                found=True
+                break
+        if not found:
+            print('Task Not Found')
