@@ -17,7 +17,7 @@ class ToDoList:
                 print(f'{i}.[{status}]{t.title}')
     def status(self):
         found=False
-        title=input('Enter task:')
+        title=input('Title:')
         for t in self.tasks:
             if t.title==title:
                 t.completed_status=True
@@ -26,4 +26,14 @@ class ToDoList:
                 break
         if not found:
             print('Task Not Found')
-    
+    def delete_task(self):
+        title=input('Title:')
+        found=False
+        for t in self.tasks:
+            if t.title==title:
+                self.tasks.remove(t)
+                found=True
+                print('Task Deleted Successfully!')
+                break
+        if not found:
+            print('Task does not exist!')
