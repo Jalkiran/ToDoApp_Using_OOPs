@@ -3,7 +3,7 @@ class ToDoList:
     def __init__(self):
         self.tasks=[]
     def add_task(self):
-        title=input('Title:').title()
+        title=input('Title:').title().strip()
         t=Task(title)
         self.tasks.append(t)
         print('----Task Added Successfully!----\n')
@@ -19,7 +19,7 @@ class ToDoList:
             print()
     def status(self):
         found=False
-        title=input('Title:').title()
+        title=input('Title:').title().strip()
         for t in self.tasks:
             if t.title==title:
                 t.completed_status=True
@@ -29,7 +29,7 @@ class ToDoList:
         if not found:
             print('----Task Not Found----\n')
     def delete_task(self):
-        title=input('Title:').title()
+        title=input('Title:').title().strip()
         found=False
         for t in self.tasks:
             if t.title==title:
