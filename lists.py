@@ -13,7 +13,8 @@ class ToDoList:
             return
         else:
             for i,t in enumerate(self.tasks,1):
-                print(f'{i}.{t.title}')
+                status='✓'if t.completed_status else'✕'
+                print(f'{i}.[{status}]{t.title}')
     def status(self):
         found=False
         title=input('Enter task:')
@@ -25,3 +26,4 @@ class ToDoList:
                 break
         if not found:
             print('Task Not Found')
+    
